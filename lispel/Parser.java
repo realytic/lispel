@@ -130,6 +130,7 @@ public class Parser {
 		env.bind("eq",   new AxiomEq());
 		env.bind("atom", new AxiomAtom());
 		env.bind("set",  new AxiomSet());
+		env.bind("eval", new AxiomEval());
 		
 		/* lists */
 		env.bind("car",  new AxiomCar());
