@@ -4,9 +4,9 @@
 
 For the basic functionality you only need the classes in the _lispel_ package which gives you a tokenizer, a parser and a Lisp implementation with _quote_, _cond_, and _lambda_. The truth values _true_ and _false_ are defined in the expression class as well as the _undefined_ value. 
 
-*Axioms can be loaded into the environment as shown in the test main method of the parser class by instantiating a new _Function_ object and binding it to a name in the global environment.
-*The predefined basic axioms _eq_, _atom_, _eval_, and _set_ can be found in the lispel.axioms.basic package.
-*The list primitives _car_, _cdr_, and _cons_ are defined in the lispel.axioms.lists package. 
-*In lispel.axioms.integers you will find a loadable integer theory with _plus_, _minus_, _multiply_, _divide_, _equals_, and _smaller_. Note that using cond, you can define the logical operators (and, or, not) which can be used to extend the integer theory in order to get >, <=, >=. However, for convenience, these functions can also be added by directly implementing them as functions like the axioms.
+  * Axioms can be loaded into the environment as shown in the test main method of the parser class by instantiating a new _Function_ object and binding it to a name in the global environment.
+  * The predefined basic axioms _eq_, _atom_, _eval_, and _set_ can be found in the lispel.axioms.basic package.
+  * The list primitives _car_, _cdr_, and _cons_ are defined in the lispel.axioms.lists package. 
+  * In lispel.axioms.integers you will find a loadable integer theory with _plus_, _minus_, _multiply_, _divide_, _equals_, and _smaller_. Note that using cond, you can define the logical operators (and, or, not) which can be used to extend the integer theory in order to get >, <=, >=. However, for convenience, these functions can also be added by directly implementing them as functions like the axioms.
 
 In contrast to the paper, a lambda expression like (lambda (a_1 ... a_n) e) evaluates to a function which can be applied using ((lambda (a_1 ... a_n) e) b_1 ... b_n). Consequently, in contrast to the paper,  if you want to pass a function defined via lambda as a parameter to another function, you must not quote it. For example, you should write ((lambda (f) (f '(b c))) (lambda (x) (cons 'a x))) instead of ((lambda (f) (f '(b c))) '(lambda (x) (cons 'a x))).
